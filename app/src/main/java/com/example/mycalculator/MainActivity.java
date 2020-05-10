@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private String expressionValue1 = "";
     private String expressionValue2 = "";
     private String Expression = "";
-    private int value1 = Integer.parseInt(expressionValue1);
-    private int value2 = Integer.parseInt(expressionValue2);
+    private int value1;
+    private int value2;
     private TextView mshowResult;
 
     @Override
@@ -25,10 +25,12 @@ public class MainActivity extends AppCompatActivity {
     public void Zero(View view) {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "0";
+            value2 = Integer.parseInt(expressionValue2);
             Expression = Expression + "0";
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "0";
+            value1 = Integer.parseInt(expressionValue1);
             Expression = Expression + "0";
             mshowResult.setText(Expression);
         }
@@ -37,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
     public void One(View view) {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "1";
+            value2 = Integer.parseInt(expressionValue2);
             Expression = Expression + "1";
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "1";
+            value1 = Integer.parseInt(expressionValue1);
             Expression = Expression + "1";
             mshowResult.setText(Expression);
         }
@@ -151,16 +155,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Equals(View view) {
-        if (Expression.contains("+") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)) {
+        if (Expression.contains("+")) {
             Expression = Integer.toString(value1 + value2);
             mshowResult.setText(Expression);
-        } else if (Expression.contains("-") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)){
+        } else if (Expression.contains("-")){
             Expression = Integer.toString(value1 - value2);
             mshowResult.setText(Expression);
-        } else if (Expression.contains("*") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)){
+        } else if (Expression.contains("*")) {
             Expression = Integer.toString(value1 * value2);
             mshowResult.setText(Expression);
-        } else if (Expression.contains("/") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)) {
+        } else if (Expression.contains("/")) {
             Expression = Integer.toString(value1 / value2);
             mshowResult.setText(Expression);
         }
