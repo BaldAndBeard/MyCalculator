@@ -10,9 +10,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String expressionValue1 = "";
     private String expressionValue2 = "";
+    private float value1;
+    private float value2;
     private String Expression = "";
-    private int value1 = Integer.parseInt(expressionValue1);
-    private int value2 = Integer.parseInt(expressionValue2);
     private TextView mshowResult;
 
     @Override
@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity {
             expressionValue2 = expressionValue2 + "0";
             Expression = Expression + "0";
             mshowResult.setText(Expression);
+            value2 = Float.parseFloat(expressionValue2);
         } else {
             expressionValue1 = expressionValue1 + "0";
             Expression = Expression + "0";
             mshowResult.setText(Expression);
+            value1 = Float.parseFloat(expressionValue1);
         }
     }
 
@@ -38,11 +40,15 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "1";
             Expression = Expression + "1";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
+
         } else {
             expressionValue1 = expressionValue1 + "1";
             Expression = Expression + "1";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
+
         }
     }
 
@@ -50,10 +56,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "2";
             Expression = Expression + "2";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "2";
             Expression = Expression + "2";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -62,10 +70,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "3";
             Expression = Expression + "3";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "3";
             Expression = Expression + "3";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -74,10 +84,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "4";
             Expression = Expression + "4";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "4";
             Expression = Expression + "4";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -86,10 +98,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "5";
             Expression = Expression + "5";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "5";
             Expression = Expression + "5";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -98,10 +112,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "6";
             Expression = Expression + "6";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "6";
             Expression = Expression + "6";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -110,10 +126,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "7";
             Expression = Expression + "7";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "7";
             Expression = Expression + "7";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -122,10 +140,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "8";
             Expression = Expression + "8";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "8";
             Expression = Expression + "8";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -134,10 +154,12 @@ public class MainActivity extends AppCompatActivity {
         if (Expression.contains("+")||Expression.contains("-")||Expression.contains("*")||Expression.contains("/")){
             expressionValue2 = expressionValue2 + "9";
             Expression = Expression + "9";
+            value2 = Float.parseFloat(expressionValue2);
             mshowResult.setText(Expression);
         } else {
             expressionValue1 = expressionValue1 + "9";
             Expression = Expression + "9";
+            value1 = Float.parseFloat(expressionValue1);
             mshowResult.setText(Expression);
         }
     }
@@ -152,17 +174,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void Equals(View view) {
         if (Expression.contains("+") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)) {
-            Expression = Integer.toString(value1 + value2);
+            Expression = Float.toString(value1 + value2);
             mshowResult.setText(Expression);
+            expressionValue1 = Expression;
+            expressionValue2 = "";
+            value1 = Float.parseFloat(expressionValue1);
         } else if (Expression.contains("-") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)){
-            Expression = Integer.toString(value1 - value2);
+            Expression = Float.toString(value1 - value2);
             mshowResult.setText(Expression);
+            expressionValue1 = Expression;
+            expressionValue2 = "";
+            value1 = Float.parseFloat(expressionValue1);
         } else if (Expression.contains("*") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)){
-            Expression = Integer.toString(value1 * value2);
+            Expression = Float.toString(value1 * value2);
             mshowResult.setText(Expression);
+            expressionValue1 = Expression;
+            expressionValue2 = "";
+            value1 = Float.parseFloat(expressionValue1);
         } else if (Expression.contains("/") && Expression.contains(expressionValue1) && Expression.contains(expressionValue2)) {
-            Expression = Integer.toString(value1 / value2);
+            Expression = Float.toString(value1 / value2);
             mshowResult.setText(Expression);
+            expressionValue1 = Expression;
+            expressionValue2 = "";
+            value1 = Float.parseFloat(expressionValue1);
         }
     }
 
