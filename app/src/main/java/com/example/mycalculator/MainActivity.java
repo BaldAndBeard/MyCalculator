@@ -12,10 +12,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-/*  private String expressionValue1 = "";
-    private String expressionValue2 = "";
-    private float value1;
-    private float value2;*/
+
     private String Expression = "";
     private List<String> myExpression = new ArrayList<>();
     private List<Float> myNums = new ArrayList<>();
