@@ -152,13 +152,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void BackSpace(View view) {
-        if (myExpression.get(myExpression.size() - 1).length() > 1) {
-            myExpression.set(myExpression.size() - 1, myExpression.get(myExpression.size() - 1).substring(0, myExpression.get(myExpression.size() - 1).length() - 1));
-        } else if (myExpression.get(myExpression.size() - 1).length() == 1) {
-            myExpression.remove(myExpression.size() - 1);
+        if (myExpression.size() > 0) {
+            if (myExpression.get(myExpression.size() - 1).length() > 1) {
+                myExpression.set(myExpression.size() - 1, myExpression.get(myExpression.size() - 1).substring(0, myExpression.get(myExpression.size() - 1).length() - 1));
+            } else if (myExpression.get(myExpression.size() - 1).length() == 1) {
+                myExpression.remove(myExpression.size() - 1);
+            }
+            Expression = Expression.substring(0, Expression.length()-1);
+            mshowResult.setText(Expression);
         }
-        Expression = Expression.substring(0, Expression.length()-1);
-        mshowResult.setText(Expression);
     }
 
     public void Equals(View view) {
