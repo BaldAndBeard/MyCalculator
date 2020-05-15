@@ -8,15 +8,16 @@
 
     <Button
         android:id="@+id/Equals"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:onClick="Equals"
         android:text="@string/Equals"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/Clear"
+        app:layout_constraintTop_toBottomOf="@+id/Result" />
 
     <Button
         android:id="@+id/Plus"
@@ -25,9 +26,9 @@
         android:onClick="Plus"
         android:text="@string/Plus"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Equals"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/BackSpace" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Clear"
+        app:layout_constraintStart_toEndOf="@+id/Minus" />
 
     <Button
         android:id="@+id/Minus"
@@ -36,9 +37,9 @@
         android:onClick="Minus"
         android:text="@string/Minus"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Plus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Three" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Plus"
+        app:layout_constraintStart_toEndOf="@+id/Multiply" />
 
     <Button
         android:id="@+id/Multiply"
@@ -47,9 +48,9 @@
         android:onClick="Multiply"
         android:text="@string/Multiply"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Minus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Three" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Minus"
+        app:layout_constraintStart_toEndOf="@+id/Divide" />
 
     <Button
         android:id="@+id/Divide"
@@ -58,20 +59,20 @@
         android:onClick="Divide"
         android:text="@string/Divide"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Multiply"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Nine" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Multiply"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/Clear"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Clear"
         android:text="@string/Clear"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Equals"
-        app:layout_constraintEnd_toStartOf="@+id/Zero"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Equals"
+        app:layout_constraintStart_toEndOf="@+id/Plus" />
 
     <Button
         android:id="@+id/Zero"
@@ -80,9 +81,9 @@
         android:onClick="Zero"
         android:text="@string/Zero"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Equals"
-        app:layout_constraintEnd_toStartOf="@+id/BackSpace"
-        app:layout_constraintStart_toEndOf="@+id/Clear" />
+        app:layout_constraintBottom_toTopOf="@+id/Divide"
+        app:layout_constraintEnd_toStartOf="@+id/One"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/One"
@@ -91,9 +92,9 @@
         android:onClick="One"
         android:text="@string/One"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Clear"
+        app:layout_constraintBottom_toTopOf="@+id/Multiply"
         app:layout_constraintEnd_toStartOf="@+id/Two"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/Zero" />
 
     <Button
         android:id="@+id/Two"
@@ -102,7 +103,7 @@
         android:onClick="Two"
         android:text="@string/Two"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Zero"
+        app:layout_constraintBottom_toTopOf="@+id/Minus"
         app:layout_constraintEnd_toStartOf="@+id/Three"
         app:layout_constraintStart_toEndOf="@+id/One" />
 
@@ -113,8 +114,8 @@
         android:onClick="Three"
         android:text="@string/Three"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/BackSpace"
-        app:layout_constraintEnd_toStartOf="@+id/Plus"
+        app:layout_constraintBottom_toTopOf="@+id/Plus"
+        app:layout_constraintEnd_toStartOf="@+id/Four"
         app:layout_constraintStart_toEndOf="@+id/Two" />
 
     <Button
@@ -124,9 +125,9 @@
         android:onClick="Four"
         android:text="@string/Four"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/One"
-        app:layout_constraintEnd_toStartOf="@+id/Five"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/Plus"
+        app:layout_constraintEnd_toStartOf="@+id/BackSpace"
+        app:layout_constraintStart_toEndOf="@+id/Three" />
 
     <Button
         android:id="@+id/Five"
@@ -135,9 +136,9 @@
         android:onClick="Five"
         android:text="@string/Five"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Two"
+        app:layout_constraintBottom_toTopOf="@+id/Zero"
         app:layout_constraintEnd_toStartOf="@+id/Six"
-        app:layout_constraintStart_toEndOf="@+id/Four" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/Six"
@@ -146,8 +147,8 @@
         android:onClick="Six"
         android:text="@string/Six"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Three"
-        app:layout_constraintEnd_toStartOf="@+id/Plus"
+        app:layout_constraintBottom_toTopOf="@+id/One"
+        app:layout_constraintEnd_toStartOf="@+id/Seven"
         app:layout_constraintStart_toEndOf="@+id/Five" />
 
     <Button
@@ -157,9 +158,9 @@
         android:onClick="Seven"
         android:text="@string/Seven"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Four"
+        app:layout_constraintBottom_toTopOf="@+id/Two"
         app:layout_constraintEnd_toStartOf="@+id/Eight"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/Six" />
 
     <Button
         android:id="@+id/Eight"
@@ -168,7 +169,7 @@
         android:onClick="Eight"
         android:text="@string/Eight"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Five"
+        app:layout_constraintBottom_toTopOf="@+id/Three"
         app:layout_constraintEnd_toStartOf="@+id/Nine"
         app:layout_constraintStart_toEndOf="@+id/Seven" />
 
@@ -179,8 +180,8 @@
         android:onClick="Nine"
         android:text="@string/Nine"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Six"
-        app:layout_constraintEnd_toStartOf="@+id/Divide"
+        app:layout_constraintBottom_toTopOf="@+id/Four"
+        app:layout_constraintEnd_toStartOf="@+id/BackSpace"
         app:layout_constraintStart_toEndOf="@+id/Eight" />
 
     <TextView
@@ -193,22 +194,21 @@
         android:text=""
         android:textAlignment="viewEnd"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Seven"
+        app:layout_constraintBottom_toTopOf="@+id/Eight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/BackSpace"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:onClick="BackSpace"
         android:text="@string/BackSpace"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Equals"
-        app:layout_constraintEnd_toStartOf="@+id/Plus"
-        app:layout_constraintStart_toEndOf="@+id/Zero" />
+        app:layout_constraintBottom_toTopOf="@+id/Clear"
+        app:layout_constraintEnd_toStartOf="@+id/Equals"
+        app:layout_constraintStart_toEndOf="@+id/Four"
+        app:layout_constraintTop_toBottomOf="@+id/Result" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

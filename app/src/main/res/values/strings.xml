@@ -20,4 +20,5 @@
     <string name="Parentheses">()</string>
     <string name="Filler">Filler</string>
     <string name="Calculator">Calculator</string>
+    <string name="BackSpace"><![CDATA[<-]]></string>
 </resources>
