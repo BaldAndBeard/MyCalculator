@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Calculator</string>
+    <string name="app_name">Jay\'s Calculator</string>
     <string name="Equals">=</string>
     <string name="Plus">+</string>
     <string name="Minus">-</string>
@@ -21,4 +21,8 @@
     <string name="Filler">Filler</string>
     <string name="Calculator">Calculator</string>
     <string name="BackSpace"><![CDATA[<-]]></string>
+    <string name="result_hint">Enter Expression Here</string>
+    <string name="history_button">History</string>
+    <string name="empty_history_hint">No History</string>
+    <string name="clear_history">Clear History</string>
 </resources>

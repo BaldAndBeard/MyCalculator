@@ -2,7 +2,9 @@ package com.example.mycalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -13,16 +15,34 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    public static final String EXTRA_MESSAGE = "com.example.android.mycalculator.extra.MESSAGE";
     private String Expression = "";
-    private List<String> myExpression = new ArrayList<>();
+    private ArrayList<String> myExpression = new ArrayList<>();
     private TextView mshowResult;
+    public String expression_history = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mshowResult = findViewById(R.id.Result);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("key", Expression);
+        outState.putStringArrayList("my_list", myExpression);
+    }
+
+    @Override
+    public void onRestoreInstanceState (Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            Expression = savedInstanceState.getString("key");
+            myExpression = savedInstanceState.getStringArrayList("my_list");
+            mshowResult.setText(Expression);
+        }
     }
 
     public void Zero(View view) {
@@ -178,8 +198,6 @@ public class MainActivity extends AppCompatActivity {
                         myExpression.remove(n);
                         myExpression.remove(n - 1);
                         break;
-                    default:
-                        System.out.println("Enter Equation");
                 }
             }
             for (int n = myExpression.size() - 1; n >= 1; n--) {
@@ -194,11 +212,11 @@ public class MainActivity extends AppCompatActivity {
                         myExpression.remove(n);
                         myExpression.remove(n - 1);
                         break;
-                    default:
-                        System.out.println("Enter Equation");
                 }
             }
+            expression_history += "\n" + Expression;
             Expression = myExpression.get(0);
+            expression_history += "= " + Expression + "\n__________________";
             mshowResult.setText(Expression);
         } else {
             System.out.println("Enter Equation");
@@ -238,4 +256,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void launchHistory(View view) {
+        Intent intent = new Intent(this, History.class);
+        intent.putExtra(EXTRA_MESSAGE, expression_history);
+        startActivity(intent);
+    }
 }
