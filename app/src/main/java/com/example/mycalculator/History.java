@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class History extends AppCompatActivity {
+public String expression_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +21,14 @@ public class History extends AppCompatActivity {
         textView.setText(expression_history);
     }
 
-    /*public void clearHistory(View view) {
+    public void clearHistory(View view) {
         expression_history = "";
+        TextView textView = findViewById(R.id.display_history);
         textView.setText(expression_history);
-    }*/
+    }
+
+    public void history_back(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
