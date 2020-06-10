@@ -165,6 +165,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void Decimal(View view) {
+        if (myExpression.size()%2==0) {
+            myExpression.add("0.");
+            Expression = Expression + "0.";
+            mshowResult.setText(Expression);
+        } else if (!myExpression.get(myExpression.size() - 1).contains(".")) {
+            myExpression.set(myExpression.size() - 1, (myExpression.get(myExpression.size() - 1) + "."));
+            Expression = Expression + ".";
+            mshowResult.setText(Expression);
+        }
+    }
+
     public void Clear(View view) {
         myExpression.clear();
         Expression = "";
@@ -194,6 +206,13 @@ public class MainActivity extends AppCompatActivity {
                         myExpression.remove(n - 1);
                         continue;
                     case "/":
+                        if (myExpression.get(n-1) == "0") {
+                            Expression = "Error: Cannot divide by 0";
+                            myExpression.clear();
+                            mshowResult.setText(Expression);
+                            Expression = "";
+                            return;
+                        }
                         myExpression.set(n + 1, Float.toString(Float.parseFloat(myExpression.get(n + 1)) / Float.parseFloat(myExpression.get(n - 1)))); //Swapped (n+1)->(n-1) and vice versa to compensate for reversed list order
                         myExpression.remove(n);
                         myExpression.remove(n - 1);
@@ -221,7 +240,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             System.out.println("Enter Equation");
         }
-
     }
 
     public void Plus(View view) {
@@ -261,4 +279,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, expression_history);
         startActivity(intent);
     }
+
+
 }

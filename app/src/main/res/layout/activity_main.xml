@@ -16,7 +16,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/Clear" />
 
     <Button
         android:id="@+id/Plus"
@@ -69,8 +69,8 @@
         android:onClick="Clear"
         android:text="@string/Clear"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Equals"
-        app:layout_constraintEnd_toStartOf="@+id/Zero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Eight"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -82,7 +82,7 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/Equals"
         app:layout_constraintEnd_toStartOf="@+id/BackSpace"
-        app:layout_constraintStart_toEndOf="@+id/Clear" />
+        app:layout_constraintStart_toEndOf="@+id/Seven" />
 
     <Button
         android:id="@+id/One"
@@ -91,7 +91,7 @@
         android:onClick="One"
         android:text="@string/One"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/Clear"
+        app:layout_constraintBottom_toTopOf="@+id/Zero"
         app:layout_constraintEnd_toStartOf="@+id/Two"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -183,6 +183,18 @@
         app:layout_constraintEnd_toStartOf="@+id/Divide"
         app:layout_constraintStart_toEndOf="@+id/Eight" />
 
+    <Button
+        android:id="@+id/Decimal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/Decimal"
+        android:textSize="36sp"
+        android:onClick="Decimal"
+        app:layout_constraintBottom_toTopOf="@+id/Clear"
+        app:layout_constraintEnd_toStartOf="@+id/Zero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Zero" />
+
     <TextView
         android:id="@+id/Result"
         android:layout_width="0dp"
@@ -222,5 +234,7 @@
         android:onClick="launchHistory"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

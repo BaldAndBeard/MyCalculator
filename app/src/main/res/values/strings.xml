@@ -25,4 +25,5 @@
     <string name="history_button">History</string>
     <string name="empty_history_hint">No History</string>
     <string name="clear_history">Clear History</string>
+    <string name="history_back">Back</string>
 </resources>
